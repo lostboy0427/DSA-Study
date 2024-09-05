@@ -13,6 +13,12 @@
 		CE127CF22C83775F0051614B /* Base in Resources */ = {isa = PBXBuildFile; fileRef = CE127CF12C83775F0051614B /* Base */; };
 		CE127CF42C8377620051614B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE127CF32C8377620051614B /* Assets.xcassets */; };
 		CE127CF72C8377620051614B /* Base in Resources */ = {isa = PBXBuildFile; fileRef = CE127CF62C8377620051614B /* Base */; };
+		CE127CFF2C8377DE0051614B /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE127CFE2C8377DE0051614B /* Stack.swift */; };
+		CE127D012C83789F0051614B /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE127D002C83789F0051614B /* Queue.swift */; };
+		CE127D032C87B2ED0051614B /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE127D022C87B2ED0051614B /* Link.swift */; };
+		CE127D052C87B9230051614B /* Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE127D042C87B9230051614B /* Sort.swift */; };
+		CE127D072C87B9390051614B /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE127D062C87B9390051614B /* Search.swift */; };
+		CE78089A2C89ED5B00BADE99 /* HashTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7808992C89ED5B00BADE99 /* HashTable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +30,12 @@
 		CE127CF32C8377620051614B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE127CF62C8377620051614B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE127CF82C8377620051614B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE127CFE2C8377DE0051614B /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		CE127D002C83789F0051614B /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
+		CE127D022C87B2ED0051614B /* Link.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
+		CE127D042C87B9230051614B /* Sort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sort.swift; sourceTree = "<group>"; };
+		CE127D062C87B9390051614B /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		CE7808992C89ED5B00BADE99 /* HashTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +71,13 @@
 				CE127CEA2C83775F0051614B /* AppDelegate.swift */,
 				CE127CEC2C83775F0051614B /* SceneDelegate.swift */,
 				CE127CEE2C83775F0051614B /* ViewController.swift */,
+				CE127D062C87B9390051614B /* Search.swift */,
+				CE127CFE2C8377DE0051614B /* Stack.swift */,
+				CE127D002C83789F0051614B /* Queue.swift */,
+				CE127D042C87B9230051614B /* Sort.swift */,
+				CE127D022C87B2ED0051614B /* Link.swift */,
 				CE127CF02C83775F0051614B /* Main.storyboard */,
+				CE7808992C89ED5B00BADE99 /* HashTable.swift */,
 				CE127CF32C8377620051614B /* Assets.xcassets */,
 				CE127CF52C8377620051614B /* LaunchScreen.storyboard */,
 				CE127CF82C8377620051614B /* Info.plist */,
@@ -138,8 +156,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE127D012C83789F0051614B /* Queue.swift in Sources */,
+				CE127CFF2C8377DE0051614B /* Stack.swift in Sources */,
 				CE127CEF2C83775F0051614B /* ViewController.swift in Sources */,
+				CE127D032C87B2ED0051614B /* Link.swift in Sources */,
+				CE127D052C87B9230051614B /* Sort.swift in Sources */,
+				CE127D072C87B9390051614B /* Search.swift in Sources */,
 				CE127CEB2C83775F0051614B /* AppDelegate.swift in Sources */,
+				CE78089A2C89ED5B00BADE99 /* HashTable.swift in Sources */,
 				CE127CED2C83775F0051614B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
