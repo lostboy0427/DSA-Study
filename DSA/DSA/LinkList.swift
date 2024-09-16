@@ -7,7 +7,11 @@
 
 import Foundation
 
-class Node<Value> {
+class Node<Value>: Equatable {
+    static func == (lhs: Node<Value>, rhs: Node<Value>) -> Bool {
+        return lhs.next == rhs.next
+    }
+    
     var value: Value
     var next: Node?
     
@@ -15,6 +19,8 @@ class Node<Value> {
         self.value = value
         self.next = next
     }
+    
+    
 }
 
 extension Node: CustomStringConvertible {
@@ -132,5 +138,87 @@ extension LinkList: CustomStringConvertible {
            return String(describing: head)
         }
         return "Empty List"
+    }
+}
+
+class Node1<Value> {
+    var prior: Node1?
+    var next: Node1?
+    var value: Value
+    
+    init(prior: Node1? = nil, next: Node1? = nil, value: Value) {
+        self.prior = prior
+        self.next = next
+        self.value = value
+    }
+}
+
+
+struct DoubleLinkList<Value> {
+    var head: Node1<Value>?
+    var tail: Node1<Value>?
+    
+    init() {}
+    
+    var isEmpty: Bool {
+        head == nil
+    }
+    
+    //  push at the beginning
+    mutating func push(_ value: Value) {
+        let node = Node1(value: value)
+        if isEmpty {
+            head = node
+            tail = head
+        } else {
+            head?.prior = node
+            head = node
+        }
+    }
+    
+    // append at the end
+    
+    mutating func append(_ value: Value) {
+        let node = Node1(value: value)
+        if isEmpty {
+            push(value)
+        } else {
+            node.prior = tail
+            tail?.next = node
+            tail = node
+        }
+    }
+    
+    func node(at index: Int) -> Node1<Value>? {
+        if isEmpty { return nil }
+        
+        var currentIndex = 0
+        var currentNode: Node1? = head
+        
+        while currentIndex < index && currentNode != nil {
+            currentNode = currentNode?.next
+            currentIndex += 1
+        }
+        return currentNode
+    }
+    
+    func length() -> Int {
+        var total = 0
+        var currentNode: Node1? = head
+        
+        while currentNode != nil {
+            currentNode = currentNode?.next
+            total += 1
+        }
+        return total
+    }
+    
+    func insert(_ value: Value, after index: Int) {
+        let node = Node1(value: value)
+        if var prior = self.node(at: index) {
+            node.next = prior.next
+            prior.next = node
+            node.prior = prior
+        }
     }
 }

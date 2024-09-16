@@ -16,8 +16,8 @@ class HashSet {
     
     func hashFunction(_ key: String) -> Int {
         var total: Int = 0
-        for c in key {
-            total += Int(String(c).unicodeScalars[String(c).startIndex].value)
+        for c in key.unicodeScalars {
+            total += Int(c.value)
         }
         return total % 10
     }
@@ -33,5 +33,9 @@ class HashSet {
         let key = hashFunction(item)
         values[key].removeAll(where: { $0 == item })
     }
+    
+}
+
+class HashMap {
     
 }

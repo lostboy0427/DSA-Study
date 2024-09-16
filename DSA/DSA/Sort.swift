@@ -328,3 +328,21 @@ func partition(_ arr: inout [Int], low: Int, high: Int) -> Int {
     print("==\(arr)")
     return i
 }
+
+func heapSort(_ arr: inout [Int]) -> [Int] {
+    
+    var count = arr.count
+    var results: [Int] = []
+    
+    var heap = Heap<Int>(elements: arr, sort: <)
+  
+    while count > 1 {
+        heap.elements.swapAt(0, count - 1)
+        results.append(heap.elements.removeLast())
+        heap.siftDown(elementAtIndex: 0)
+        count -= 1
+    }
+    
+    return results
+}
+

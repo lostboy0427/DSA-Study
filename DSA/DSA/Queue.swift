@@ -10,6 +10,10 @@ import Foundation
 struct Queue<T> {
     var items: [T]
     
+    init() {
+        items = [T]()
+    }
+    
     mutating func enqueue(_ item: T) {
         self.items.append(item)
     }
@@ -44,6 +48,10 @@ struct EfficientQueue<T> {
     var items = [T?]()
     var head = 0
     
+    init() {
+        items = [T]()
+    }
+    
     mutating func enqueue(_ item: T) {
         self.items.append(item)
     }
@@ -75,5 +83,46 @@ struct EfficientQueue<T> {
     
     subscript(_ i: Int) -> T? {
         items[i]
+    }
+}
+
+struct Queue1<Value> { // https://nitinagam.medium.com/data-structure-in-swift-queue-part-5-985601071606
+    
+//    var link: LinkList<Value>
+//    
+//    init() {
+//        link = LinkList()
+//    }
+//    
+    var head: Node<Value>?
+    var tail: Node<Value>?
+    
+    var isEmpty: Bool {
+        head == nil
+    }
+    
+    mutating func enqueue(_ value: Value) {
+        let node = Node(value: value)
+        if head == nil {
+            head = node
+            tail = head
+        } else {
+            tail?.next = node
+            tail = node
+        }
+    }
+    
+    mutating func dequeue() -> Value {
+        if isEmpty {
+            fatalError("Queue is empty")
+        }
+       
+        defer {
+            head = head?.next
+            if isEmpty {
+                tail = nil
+            }
+        }
+        return head!.value
     }
 }
